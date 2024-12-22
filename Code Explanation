@@ -1,0 +1,31 @@
+Python code is working as intended to analyze Bitcoin (BTC-USD) historical price data using the yfinance library, calculate technical indicators such as support, resistance, moving averages (SMA), and RSI (Relative Strength Index). The output confirms that:
+
+Data Download: Successfully fetched BTC-USD historical data from May 2024 to December 2024 with daily intervals.
+Data Formatting: Cleaned and structured the data with proper column headers by flattening the MultiIndex and setting the Date index as a DatetimeIndex.
+Technical Indicators:
+Support and resistance levels calculated over a rolling window of 20 days.
+Simple Moving Averages (SMA_20 and SMA_50) calculated.
+RSI calculated over a 14-day window using the ta.momentum.RSIIndicator.
+Next steps:
+1. Data Visualization:
+    Plot the data to better understand trends:
+    Overlay Close_BTC-USD, SMA_20, and SMA_50 on a line graph.
+    Highlight support and resistance levels.
+    Plot RSI on a separate subplot to identify overbought/oversold conditions.
+2. Signal Generation:
+    Generate buy/sell signals:
+    Use SMA crossovers (e.g., 20-SMA crossing above 50-SMA).
+    SMA Crossover Signals:
+    Buy Signal: When SMA_20 crosses above SMA_50.
+    Sell Signal: When SMA_20 crosses below SMA_50.
+    RSI thresholds (e.g., buy below 30, sell above 70).
+    RSI Signals:
+    Buy Signal: When RSI is below 30.
+    Sell Signal: When RSI is above 70.
+     Add these signals as columns to the DataFrame.
+3. Performance Evaluation:
+    Simulate a trading strategy based on the signals.
+    Track metrics like profit/loss, win rate, and Sharpe ratio.
+4. Extend Analysis:
+    Include additional indicators (e.g., Bollinger Bands, MACD).
+    Test on multiple assets/tickers.
